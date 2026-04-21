@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVEN CIRCLES | Electronic Press Kit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/WebIcon.png">
+<meta property="og:title" content="Seven Circles | Electronic Press Kit">
+<meta property="og:description" content="Atmospheric Industrial Groove Metal from North West UK.">
+<meta property="og:image" content="https://quiet-lollipop-28ba3c.netlify.app/images/30A0655.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --text-color: #ffffff;
+            --accent-color: #ff3e3e; /* Change this to your band's brand color */
+            --secondary-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+img {
+    max-width: 100%; /* Image will never be wider than the phone screen */
+    height: auto;    /* Maintains the aspect ratio so it doesn't get squashed */
+}
+header {
+    min-height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Default for Desktop */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+                url('images/30A0655.jpg') no-repeat center center/cover;
+    box-sizing: border-box;
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    header {
+        /* This ensures the 'Wall of Sound' atmosphere fits the height of a phone */
+        min-height: 40vh; 
+        
+        /* 'contain' shows the WHOLE image, but might leave gaps. 
+           '100% 100%' stretches it.
+           Usually, for a band photo, 'center top' or 'center center' is best. */
+        background-position: center center;
+background-size: contain;
+background-color: #000; /* Fills the gaps with black */
+    }
+}
+
+header p {
+    font-size: clamp(0.9rem, 4vw, 1.2rem); /* Shrinks text on mobile */
+    padding: 0 20px; /* Prevents text from touching screen edges */
+}
+
+header h1 {
+    font-size: clamp(2rem, 8vw, 4rem); /* This makes text "shrink" for smaller screens */
+}
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #555; /* Muted the red to a cold steel gray */
+            display: inline-block;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* Music Section */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        iframe {
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        /* Bio & Press Section */
+        .bio-text {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+        }
+
+        /* Downloads Section */
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--secondary-bg);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+        }
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border: 1px solid #333; /* Matches your music player border */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    color: #ffffff; /* White icons */
+    font-size: 1.8rem; /* Size of the logos */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--accent-color); /* Changes to your brand color on hover */
+    transform: translateY(-3px); /* Subtle 'lift' effect */
+    text-shadow: 0 0 15px var(--accent-color); /* Industrial glow */
+}
+
+/* Ensure they don't get too cramped on mobile */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 20px;
+    }
+    .social-links a {
+        font-size: 1.5rem;
+    }
+}
+p {
+    /* clamp(MIN, PREFERRED, MAX) */
+    font-size: clamp(1rem, 2.5vw, 1.25rem); 
+    line-height: 1.6;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/SevenCirclesLogoTR1.png" alt="Seven Circles Logo" 
+         style="width: 90%; max-width: 600px; height: auto; margin-bottom: 20px;">
+
+<div class="social-links">
+    <a href="https://instagram.com/yourlink" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/yourlink" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://spotify.com/yourlink" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://youtube.com/yourlink" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://seven-circles.bandcamp.com" target="_blank"><i class="fab fa-bandcamp"></i></a>
+</div>
+</header>
+
+    <div class="container">
+        
+<section id="music">
+    <h2>The Sound</h2>
+    <div class="music-flex-container">
+        <div class="cover-art">
+            <img src="images/LesserThanSingle.jpg" alt="Seven Circles-Lesser Than-Single Art" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+        </div>
+
+        <div class="audio-section">
+            <h3>Track Title - "Lesser Than"</h3>
+            <p class="status-tag">Exclusive Preview</p>
+            
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306561654%3Fsecret_token%3Ds-tVZnuJ1Dt2P&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+    </iframe>
+            
+            <p class="track-desc">
+                "A glimpse into the wall of sound—low-tuned precision meets industrial groove atmosphere."
+            </p>
+        </div>
+    </div>
+</section>
+
+        <section id="video">
+    <h2>Visuals</h2>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/nqesgCc1uEE?rel=0&enablejsapi=1&origin=https://www.youtube.com"
+sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+            title="Seven Circles - Official Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+        <section id="about">
+            <h2>Biography</h2>
+            <div class="bio-text">
+                <p>Seven Circles:
+
+Formed in 2025, Seven Circles was born out of a desire to treat extreme metal as a physical space rather than just a genre. Drawing heavy influence from the industrial pioneers of the 90s and the technical precision of the modern era, the band has cultivated a sound defined by low-tuned devastation and immersive, cinematic atmosphere.
+
+Following the philosophy of their name—abstract, ancient, and cyclical—the band's music avoids traditional tropes in favor of a "Wall of Sound" approach. Massive, high-gain distortion and mechanical grooves are layered with soaring melodic textures and intense, commanding vocals. The result is a specialized brand of extreme metal built for the modern age.</p>
+                <div class="quote">
+                    "If that's a demo, I can't wait to hear the real thing" <br>
+                    — <strong>Metal Mayhem Radio</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="assets">
+            <h2>Press Assets</h2>
+            <p>Download everything you need for promotion:</p>
+            <a href="images/SevenCirclesPressPhotos.zip" class="btn">Hi-Res Press Photos (ZIP)</a>
+            <a href="images/SevenCirclesTechSheet.pdf" class="btn">Stage Plot / Technical Rider (PDF)</a>
+            <a href="#" class="btn">Full Bio (PDF)</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><strong>Booking & Management:</strong> 7vencircles@gmail.com</p>
+            <p><strong>General Inquiries:</strong> 7vencircles@gmail.com</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SEVEN CIRCLES. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
