@@ -19,6 +19,10 @@
             --secondary-bg: #1a1a1a;
         }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
@@ -177,6 +181,8 @@ header h1 {
     font-size: 1.8rem; /* Size of the logos */
     transition: all 0.3s ease;
     text-decoration: none;
+    display: inline-block;
+    padding: 10px; /* This makes the clickable area larger without changing the icon size */
 }
 
 .social-links a:hover {
