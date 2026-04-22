@@ -346,10 +346,99 @@ p {
     height: 100%;
     cursor: default;
 }
+
+/* Burger Button */
+.menu-toggle {
+    display: block; /* Always show it */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Nav Overlay Styling */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 11, 11, 0.95);
+    z-index: 10000;
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-overlay.active {
+    right: 0; /* Slide in */
+}
+
+.nav-links {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 30px 0;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Burger Animation to 'X' */
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     </style>
 </head>
 <body>
+<div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
 
+<nav class="nav-overlay" id="nav-overlay">
+    <ul class="nav-links">
+        <li><a href="#music" onclick="toggleMenu()">Sound</a></li>
+        <li><a href="#video" onclick="toggleMenu()">Visuals</a></li>
+        <li><a href="#about" onclick="toggleMenu()">Bio</a></li>
+        <li><a href="#gallery" onclick="toggleMenu()">Aesthetic</a></li>
+        <li><a href="#assets" onclick="toggleMenu()">Assets</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+</nav>
 <header>
     <img src="images/SevenCirclesLogoTR1.png" alt="Seven Circles Logo" 
          style="width: 90%; max-width: 600px; height: auto; margin-bottom: 100px;">
@@ -480,6 +569,18 @@ Following the philosophy of their name—abstract, ancient, and cyclical—the b
     <footer>
         <p>&copy; 2026 SEVEN CIRCLES. All Rights Reserved.</p>
     </footer>
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const nav = document.querySelector('#nav-overlay');
 
+    function toggleMenu() {
+        menu.classList.toggle('active');
+        nav.classList.toggle('active');
+        // Prevent background scrolling when menu is open
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+    }
+
+    menu.addEventListener('click', toggleMenu);
+</script>
 </body>
 </html>
