@@ -199,6 +199,47 @@ p {
     font-size: clamp(1rem, 2.5vw, 1.25rem); 
     line-height: 1.6;
 }
+
+/* Music Flex Layout */
+.music-flex-container {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: flex-start;
+    gap: 30px; /* Space between image and player */
+    background: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.cover-art {
+    flex: 0 0 250px; /* Don't grow, don't shrink, stay at 250px */
+}
+
+.cover-art img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 0 !important; /* Overrides your inline margin */
+}
+
+.audio-section {
+    flex: 1; /* Take up the rest of the available space */
+}
+
+/* Mobile Responsive: Stack them on top of each other */
+@media (max-width: 768px) {
+    .music-flex-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cover-art {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px; /* Larger on mobile for impact */
+    }
+}
     </style>
 </head>
 <body>
@@ -222,18 +263,18 @@ p {
     <h2>The Sound</h2>
     <div class="music-flex-container">
         <div class="cover-art">
-            <img src="images/LesserThanSingle.jpg" alt="Seven Circles-Lesser Than-Single Art" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+            <img src="images/LesserThanSingle.jpg" alt="Seven Circles - Lesser Than - Single Art">
         </div>
 
         <div class="audio-section">
-            <h3>Track Title - "Lesser Than"</h3>
-            <p class="status-tag">Exclusive Preview</p>
+            <h3 style="margin-top: 0;">Lesser Than</h3>
+            <p class="status-tag" style="color: var(--accent-color); font-weight: bold; margin-bottom: 10px;">Exclusive Preview</p>
             
             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2306561654%3Fsecret_token%3Ds-tVZnuJ1Dt2P&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-    </iframe>
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2306561654%3Fsecret_token%3Ds-tVZnuJ1Dt2P&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
             
-            <p class="track-desc">
+            <p class="track-desc" style="font-style: italic; font-size: 0.9rem; margin-top: 15px; color: #888;">
                 "A glimpse into the wall of sound—low-tuned precision meets industrial groove atmosphere."
             </p>
         </div>
