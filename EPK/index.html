@@ -246,6 +246,106 @@ p {
         max-width: 300px; /* Larger on mobile for impact */
     }
 }
+
+/* Gallery Styling */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px; /* Tight gaps feel more 'industrial' */
+    margin-top: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1; /* Forces images into perfect squares */
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #222;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fill the square */
+    filter: grayscale(100%) contrast(120%); /* High-contrast B&W vibe */
+    transition: all 0.4s ease;
+}
+
+.gallery-item img:hover {
+    filter: grayscale(0%) contrast(100%); /* Returns to color on hover */
+    transform: scale(1.05);
+}
+
+/* Mobile: 2 columns instead of 1 for 8 images so the scroll isn't too long */
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+}
+.gallery-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* This makes it obvious the image is clickable */
+.gallery-item img:hover {
+    cursor: zoom-in; 
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999; /* Sits on top of everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    text-align: center;
+}
+
+.lightbox:target {
+    display: flex; /* Show when the URL matches the ID */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 2px solid #333;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close-lightbox:hover {
+    color: var(--accent-color);
+}
+
+/* Background Click-to-Close */
+.lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
     </style>
 </head>
 <body>
@@ -315,7 +415,51 @@ Following the philosophy of their name—abstract, ancient, and cyclical—the b
                 </div>
             </div>
         </section>
-
+<section id="gallery">
+    <h2>Aesthetic</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><a href="#img1"><img src="images/Gallery/SevenCircles_1.jpg" alt="Seven Circles 1"></a></div>
+        <div class="gallery-item"><a href="#img2"><img src="images/Gallery/SevenCircles_2.jpg" alt="Seven Circles 2"></a></div>
+        <div class="gallery-item"><a href="#img3"><img src="images/Gallery/SevenCircles_3.jpg" alt="Seven Circles 3"></a></div>
+        <div class="gallery-item"><a href="#img4"><img src="images/Gallery/SevenCircles_4.jpg" alt="Seven Circles 4"></a></div>
+        <div class="gallery-item"><a href="#img5"><img src="images/Gallery/SevenCircles_5.jpg" alt="Seven Circles 5"></a></div>
+        <div class="gallery-item"><a href="#img6"><img src="images/Gallery/SevenCircles_6.jpg" alt="Seven Circles 6"></a></div>
+        <div class="gallery-item"><a href="#img7"><img src="images/Gallery/SevenCircles_7.jpg" alt="Seven Circles 7"></a></div>
+        <div class="gallery-item"><a href="#img8"><img src="images/Gallery/SevenCircles_8.jpg" alt="Seven Circles 8"></a></div>
+    </div>
+    <div class="lightbox" id="img1">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_1.jpg" alt="Seven Circles 1">
+    </div>
+    <div class="lightbox" id="img2">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_2.jpg" alt="Seven Circles 2">
+    </div>
+    <div class="lightbox" id="img3">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_3.jpg" alt="Seven Circles 3">
+    </div>
+    <div class="lightbox" id="img4">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_4.jpg" alt="Seven Circles 4">
+    </div>
+    <div class="lightbox" id="img5">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_5.jpg" alt="Seven Circles 5">
+    </div>
+    <div class="lightbox" id="img6">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_6.jpg" alt="Seven Circles 6">
+    </div>
+    <div class="lightbox" id="img7">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_7.jpg" alt="Seven Circles 7">
+    </div>
+    <div class="lightbox" id="img8">
+        <a href="#gallery" class="lightbox-backdrop"></a> <a href="#gallery" class="close-lightbox">&times;</a>
+        <img src="images/Gallery/SevenCircles_8.jpg" alt="Seven Circles 8">
+    </div>
+</section>
         <section id="assets">
             <h2>Press Assets</h2>
             <p>Download everything you need for promotion:</p>
